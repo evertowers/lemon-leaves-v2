@@ -1,0 +1,497 @@
+/* App.css */
+
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.app {
+    display: flex;
+    height: auto;
+    overflow: hidden;
+  }
+
+  h1 {
+    padding: 10px 0 40px 5px;    
+    font-size: 15px;
+    color: black;
+
+  }
+
+  h2 {
+    font-family: 'Inter', sans-serif;
+    color: black;
+    font-weight: 500;
+    font-size: 30px;
+  }
+
+  p1 {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .logoDiv {
+    /* margin-bottom: 10px; */
+    display: flex;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 200;
+    margin-bottom: 0;
+
+  }
+
+  .logoDiv h1 {
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+  
+  .logo {
+    height: 50px;
+    padding: 18px 5px 5px 15px;
+    margin: 0;
+  }
+
+  .usernameGreeting h1 {
+    font-size: 25px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    margin: 0 0 0 15px;
+    border-bottom: 1px solid white;
+  }
+  
+  .sidebar {
+    width: 300px;
+    position: fixed;
+    height: 100%;   
+    background-color: #7BB07A;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 10px 20px 10px 20px;  
+    box-sizing: border-box;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    font-size: 25px;
+  }
+  
+  .nav-links li {
+    padding: 30px 20px 30px 40px;
+    text-align: left;
+    cursor: pointer;
+
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+  }
+
+  .notSelectedLink {
+    color:  black;
+  }
+
+  .selectedLink {
+    /* padding: 15px 0;
+    text-align: center;
+    cursor: pointer; */
+    background-color: #445A44;
+    color: white;
+    font-weight: 500;
+    /* border-bottom: 1px solid #34495e; */
+  }
+
+  .nav-links li:hover {
+    background-color: #508C4F;
+  }
+
+  .nav-icons {
+    max-width: 13%;
+    align-items: center;
+  }
+
+  .lowerSideBar {
+    border-top: 1px solid white;
+    margin-top: 30px;
+    width: 100%;
+  }
+  
+  .content {
+    flex-grow: 1;
+    margin-left: 300px;
+    padding: 40px 70px 30px 50px;
+    background-color: rgb(209, 205, 205);
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  .optionsContainer {
+    width: 100%;
+    height: 500px;
+    display: flex;
+  }
+  
+  .optionButton {
+    width: 50%;
+    background-color: #FEF250;
+    margin: 50px 40px 40px 40px;
+    border-radius: 20%;
+    /* align-items: center;
+    align-content: center; */
+    display: block;
+  }
+
+  .optionButton img {
+    width: 190px;
+    height: auto;
+    justify-content: center;
+    padding: 50px 50px 0 150px;
+
+  }
+
+  .optionButton p2 {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .gotoButton {
+    margin: 10px 0 0 110px;
+    width: 250px;
+    height: 80px;
+    border-radius: 15px;
+    background-color: black;
+  }
+
+  .gotoButton:hover {
+    background-color: #445A44;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 50%; /* Increase width on smaller screens */
+      padding: 5px; /* Reduce padding */
+    }
+  
+    .nav-links li {
+      font-size: 20px; /* Reduce font size */
+      padding: 20px 10px; /* Adjust padding */
+    }
+  
+    .content {
+      padding: 20px; /* Adjust content padding */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 80%; /* Further increase width on very small screens */
+    }
+  
+    h2 {
+      font-size: 24px; /* Reduce font size for headings */
+    }
+  
+    .nav-links li {
+      font-size: 18px; /* Further reduce font size */
+    }
+  }
+
+/* Container for the entire page with background */
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.login-page h1{
+    font-size: 30px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 100;
+    padding: 0;
+  }
+  
+.login-page p1{
+font-size: 15px;
+font-family: 'Inter', sans-serif;
+font-weight: 300;
+}
+
+/* Container for the login form */
+.login-container {
+  background: rgba(217, 217, 217, 0.5);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+}
+
+input[type="email"], input[type="password"] {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.loginButton {
+  width: 50%;
+  padding: 12px;
+  background-color: #fcd12a;  /* Lemon-yellow color */
+  color: black;  /* Black text */
+  border: none;  /* Remove default border */
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 16px;  /* Text size */
+  cursor: pointer;  /* Pointer on hover */
+  font-weight: bold; /* Bold text */
+}
+
+.loginButton:hover {
+  background-color: #e0b822; /* Slightly darker yellow on hover */
+}
+
+.loginButton:focus {
+  outline: none; /* Remove the default outline when button is focused */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Add a subtle shadow when focused */
+}
+
+
+
+.chooseFile {
+    width: auto;
+    display: inline-block;
+    margin: 30px 0 0 10px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;           
+    border: none;
+    border-radius: 5px;      
+    font-size: 16px;        
+    cursor: pointer;           
+}
+
+.chooseFileDiv {
+    width: 100%;
+    height: 100px;
+    border-radius: 30px;
+}
+
+.chooseFile:hover {
+    background-color: #445A44;
+}
+
+.predictionContainer {
+    width: 100%;
+    height: auto;
+}
+
+.predictionText {
+  padding-right: 50px;
+}
+
+.previewContainer {
+    width: 100%;
+    height: auto;
+    background-color: #FEF250;
+    display: flex;
+    border-radius: 30px;
+    align-items: flex-start;
+    
+}
+
+.previewContainer img {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    margin: 30px;
+    border: 10px solid black;
+    border-radius: 5px;
+}
+
+.predictionText {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.predictionText h1 {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    padding: 30px 0 0 0;
+}
+
+.predictionText h2 {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 0 10px 0;
+    text-transform: uppercase;
+}
+
+.predictionText p1 {
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 30px 0 0 30px;
+    background-color: wheat;
+}
+
+.diseaseContent h1 {
+    color: black;
+}
+
+.diseaseContent p3 {
+    color: black;
+}
+
+
+/* Background container for the whole form */
+.signup-container {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Transparent overlay */
+.overlay {
+  background-color: rgba(217, 217, 217, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Sign-up form styling */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup-form p2 {
+  margin-bottom: 10px;
+  font-family: 'Inter', sans-serif; /* Assuming you're using Lexend */
+  font-weight: 300;
+  color: black;
+}
+
+.signup-form h2 {
+  margin-bottom: 30px;
+  font-family: 'Lexend', sans-serif; /* Assuming you're using Lexend */
+  color: black;
+  font-weight: 100;
+}
+
+/* Form inputs */
+.signup-form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 80%;
+  align-self: center;
+  margin: 5px 0;
+}
+
+.signup-form button {
+  width: 50%;
+  padding: 12px;
+  background-color: #fcd12a;  /* Lemon-yellow color */
+  color: black;  /* Black text */
+  border: none;  /* Remove default border */
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 16px;  /* Text size */
+  cursor: pointer;  /* Pointer on hover */
+  font-weight: bold; /* Bold text */
+  align-self: center;
+}
+
+.signup-form button:hover {
+  background-color: #fdd835; /* Slightly darker yellow on hover */
+}
+
+.signup-form a {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  margin-top: 20px;
+  border: 2px solid #000; /* Outer border of the table */
+}
+
+.styled-table thead {
+  background-color: #FFEB3B; /* Yellow header */
+  border: 2px solid #000; /* Outer border of the table */
+}
+
+.styled-table thead th {
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #2c2b2b;
+}
+
+.styled-table tbody tr.odd-row {
+  background-color: #d3d3d3; /* Light Gray for odd rows */
+}
+
+.styled-table tbody tr.even-row {
+  background-color: #555555; /* Dark Gray for even rows */
+  color: white; /* White text for contrast on dark background */
+}
+
+.styled-table tbody td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #2c2b2b;
+}
+
+.styled-table tbody tr td:first-child {
+  border-left: none;
+}
+
+.styled-table tbody tr td:last-child {
+  border-right: none;
+}
+
+.clearData {
+  margin: 30px 0 0 10px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;           
+  border: none;
+  border-radius: 5px;      
+  font-size: 16px;          
+  cursor: pointer;           
+}
