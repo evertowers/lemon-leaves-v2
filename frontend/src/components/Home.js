@@ -13,8 +13,8 @@ function Home() {
     const [data, setData] = useState();
     const [image, setImage] = useState(false);
     const [isLoading, setIsloading] = useState(false);
-    const [useWebcam, setUseWebcam] = useState(false); // Track webcam usage
-    const webcamRef = useRef(null); // Webcam reference
+    const [useWebcam, setUseWebcam] = useState(false); 
+    const webcamRef = useRef(null); 
     const navigate = useNavigate();
     let confidence = 0;
     const token = localStorage.getItem('token');
@@ -42,13 +42,11 @@ function Home() {
         setUseWebcam(false);
     };
 
-    // Function to capture webcam image
     const capture = useCallback(() => {
         const imageSrc = webcamRef.current.getScreenshot();
         setPreview(imageSrc);
         setIsloading(true);
 
-        // Convert the image to Blob for sending to the backend
         fetch(imageSrc)
             .then(res => res.blob())
             .then(blob => sendFile(blob));
@@ -89,24 +87,19 @@ function Home() {
     
     useEffect(() => {
         if (!token) {
-            // No token found, redirect to login
             navigate('/login');
         } 
 
     })
 
     const handleLogout = () => {
-        // Remove the token from localStorage
         const confirmLogout = window.confirm('Do you want to log out?');
         if (confirmLogout) {
-            // Remove the token from localStorage
             localStorage.removeItem('token');
             localStorage.removeItem('username');
             
-            // Redirect to the login page
             navigate('/login');
           } else {
-            // If the user clicks "No" (Cancel), do nothing
             console.log('Logout cancelled');
           }
     };
@@ -139,12 +132,6 @@ function Home() {
                     </div>
                 </div>
             </div>
-            
-            {/* {isLoading && <p>Loading...</p>}
-            <button onClick={clearData}>Clear</button>
-            <button onClick={() => setUseWebcam(!useWebcam)}>
-                {useWebcam ? "Use Upload" : "Use Webcam"}
-            </button>  */}
         </div>
     );
 }

@@ -12,17 +12,16 @@ function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Fetch reports data
     const fetchReports = async () => {
         const token = localStorage.getItem('token');
         try {
             // const response = await axios.get('http://localhost:8000/api/auth/reports'); // Update with your API endpoint
             const response = await axios.get('http://localhost:8000/api/auth/reports', {
                 headers: {
-                    Authorization: `Bearer ${token}`, // Include token in the request headers
+                    Authorization: `Bearer ${token}`, 
                 },
             });
-            setReports(response.data); // Assuming your API returns the reports array
+            setReports(response.data);
         } catch (err) {
             setError('Error fetching reports');
         } finally {
@@ -62,7 +61,7 @@ function Dashboard() {
                         </thead>
                         <tbody>
                         {reports
-                            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)) // Sort in descending order
+                            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)) 
                             .map((report, index) => (
                                 <tr key={report.id} className={index % 2 === 0 ? "odd-row" : "even-row"}>
                                 <td>{report.image_path}</td>
@@ -72,7 +71,7 @@ function Dashboard() {
                                 {
                                     (() => {
                                     const date = new Date(report.created_at);
-                                    date.setHours(date.getHours() + 8); // Add 8 hours
+                                    date.setHours(date.getHours() + 8); 
                                     return date.toLocaleString();
                                     })()
                                 }

@@ -1,147 +1,3 @@
-// import React, { useState, useEffect, useCallback, useRef } from 'react';
-// import axios from 'axios';
-// import Webcam from 'react-webcam';
-// import { useNavigate } from 'react-router-dom';
-// import './css/app.css';
-// import SideBar from './sidebar';
-// import DiseaseGreening from './disease-greening';
-// import DiseaseCanker from './disease-canker';
-// import DiseaseMelanose from './disease-melanose';
-
-// function HomeCapture() {
-//     const [selectedFile, setSelectedFile] = useState();
-//     const [preview, setPreview] = useState();
-//     const [data, setData] = useState();
-//     const [image, setImage] = useState(false);
-//     const [isLoading, setIsloading] = useState(false);
-//     const [useWebcam, setUseWebcam] = useState(false); // Track webcam usage
-//     const webcamRef = useRef(null); // Webcam reference
-//     const navigate = useNavigate();
-//     let confidence = 0;
-
-//     const sendFile = async (imageToSend) => {
-//         let formData = new FormData();
-//         formData.append("file", imageToSend);
-//         let res = await axios({
-//             method: "post",
-//             url: process.env.REACT_APP_API_URL || 'http://localhost:8000/predict',
-//             data: formData,
-//         });
-//         if (res.status === 200) {
-//             setData(res.data);
-//         }
-//         setIsloading(false);
-//     };
-
-//     const clearData = () => {
-//         setData(null);
-//         setImage(false);
-//         setSelectedFile(null);
-//         setPreview(null);
-//         setUseWebcam(false);
-//     };
-
-//     // Function to capture webcam image
-//     const capture = useCallback(() => {
-//         const imageSrc = webcamRef.current.getScreenshot();
-//         setPreview(imageSrc);
-//         setIsloading(true);
-
-//         // Convert the image to Blob for sending to the backend
-//         fetch(imageSrc)
-//             .then(res => res.blob())
-//             .then(blob => sendFile(blob));
-//     }, [webcamRef]);
-
-//     const onSelectFile = (event) => {
-//         const files = event.target.files;
-//         if (!files || files.length === 0) {
-//             setSelectedFile(undefined);
-//             setImage(false);
-//             setData(undefined);
-//             return;
-//         }
-//         setSelectedFile(files[0]);
-//         setData(undefined);
-//         setImage(true);
-//     };
-
-//     useEffect(() => {
-//         if (!selectedFile) {
-//             setPreview(undefined);
-//             return;
-//         }
-//         const objectUrl = URL.createObjectURL(selectedFile);
-//         setPreview(objectUrl);
-//     }, [selectedFile]);
-
-//     useEffect(() => {
-//         if (preview && !useWebcam) {
-//             setIsloading(true);
-//             sendFile(selectedFile);
-//         }
-//     }, [preview, useWebcam]);
-
-//     if (data) {
-//         confidence = (parseFloat(data.confidence) * 100).toFixed(2);
-//     }
-
-//     const renderContent = () => {
-//         switch (data.class) {
-//             case 'Black Spot':
-//                 return <p>This is the content for Black Spot.</p>;
-//             case 'Melanose':
-//                 return <DiseaseMelanose/>;
-//             case 'Canker':
-//                 return <DiseaseCanker/>;
-//             case 'Greening':
-//                 return <DiseaseGreening/>;
-//             default:
-//                 return <p>This leaf is healthy.</p>;
-//         }
-//     };
-
-//     const handleHome = () => {
-//         navigate('/home');
-//     }
-
-
-//     return (
-//         <div className="app">
-//             <SideBar page="home"/>
-//             <div className="content">
-//                 <h2>Capture Image</h2>
-//                 <p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-//                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis no
-//                     Lorem ipsum dolor sit amet, consectetur</p1>
-//                 <div className="predictionContainer">
-//                     <div className="chooseFileDiv">
-//                         <button onClick={handleHome} className="chooseFile">Go back to Home</button>
-//                     </div>
-//                     <div className="previewContainer">
-//                         <Webcam
-//                             audio={false}
-//                             ref={webcamRef}
-//                             screenshotFormat="image/jpeg"
-//                         />
-//                         <button onClick={capture}>Capture</button>
-//                     </div>
-//                 </div>
-//                 {data && (
-//                     <div>
-//                         <p>Disease: {data.class}</p>
-//                         <p>Confidence: {confidence}%</p>
-//                     </div>)}
-//                 {isLoading && <p>Loading...</p>}
-//                 <button onClick={clearData}>Clear</button>
-//             </div>
-
-//         </div>
-//     );
-// }
-
-// export default HomeCapture;
-
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import axios from 'axios';
 import Webcam from 'react-webcam';
@@ -162,9 +18,9 @@ function HomeCapture() {
     let confidence = 0;
 
     const videoConstraints = {
-        width: 600,  // Set the desired width
-        height: 400, // Set the desired height
-        facingMode: "environment" // Use "user" for the front camera or "environment" for the back camera
+        width: 600,  
+        height: 400, 
+        facingMode: "environment" 
     };
 
     const sendFile = async (imageToSend) => {
@@ -182,12 +38,10 @@ function HomeCapture() {
         }
     };
 
-    // Function to capture webcam image
     const capture = useCallback(() => {
         const imageSrc = webcamRef.current.getScreenshot();
         setPreview(imageSrc);
 
-        // Convert the image to Blob for sending to the backend
         fetch(imageSrc)
             .then(res => res.blob())
             .then(blob => sendFile(blob));
@@ -249,7 +103,6 @@ function HomeCapture() {
                             <div className="predictionText">
                                 <h1>Disease: </h1>
                                 <h2>{data.class}</h2>
-                                {/* <h1>Confidence: {confidence}%</h1> */}
                                 {renderContent()}
                             </div>
                         )} 

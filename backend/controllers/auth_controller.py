@@ -7,7 +7,7 @@ import bcrypt
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
 
-SECRET_KEY = "secretKey"  # You should keep this secret
+SECRET_KEY = "secretKey" 
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 

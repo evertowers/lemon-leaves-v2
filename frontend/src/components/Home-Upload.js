@@ -30,7 +30,6 @@ function HomeUpload() {
                 }
             });
             setData(res.data);
-            // alert(`Prediction Result:\nClass: ${res.data.class}\nConfidence: ${(res.data.confidence * 100).toFixed(2)}%\nUploaded At: ${new Date(res.data.created_at).toLocaleString()}`);
         } catch (error) {
             alert('Error during prediction');
         } finally {
