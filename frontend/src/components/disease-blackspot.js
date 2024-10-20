@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/app.css';
 
-const DiseaseGreening = () => {
+const DiseaseBlackSpot = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
@@ -22,15 +22,15 @@ const DiseaseGreening = () => {
 
             <h1>Organic Treatments: </h1>
             <ul>
-              <li><p>Copper Fungicides: Use certified organic copper-based fungicides. Apply them according to the label instructions, particularly during the early stages of disease development.</p></li>
-              <li><p>Neem Oil: This natural pesticide can help control fungal infections. Mix it with water as directed and spray it on affected areas.</p></li>
-              <li><p>Baking Soda Solution: Mix 1 tablespoon of baking soda, 1 tablespoon of vegetable oil, and 1 gallon of water. Spray this solution on the affected leaves to help inhibit fungal growth.</p></li>
-              <li><p>Horticultural Oils: These oils can help control fungal pathogens. Be sure to apply during cooler parts of the day to avoid leaf burn.</p></li>
-              <li><p>Remove Infected Leaves: Regularly inspect your plants and remove any infected leaves to minimize the spread of the fungus.</p></li>
-              <li><p>Improve Air Circulation: Prune your citrus trees to ensure good air flow, which can help reduce humidity around the leaves and discourage fungal growth.</p></li>
-              <li><p>Water Management: Avoid overhead watering and water in the morning to reduce leaf wetness, which can promote fungal diseases.</p></li>
-              <li><p>Mulching: Apply organic mulch around the base of the trees to help retain moisture and improve soil health.</p></li>
-              <li><p>Healthy Soil Practices: Ensure your trees are getting adequate nutrition by using compost or organic fertilizers to strengthen their immune systems.</p></li>
+              <li><p3>Copper Fungicides: Use certified organic copper-based fungicides. Apply them according to the label instructions, particularly during the early stages of disease development.</p3></li>
+              <li><p3>Neem Oil: This natural pesticide can help control fungal infections. Mix it with water as directed and spray it on affected areas.</p3></li>
+              <li><p3>Baking Soda Solution: Mix 1 tablespoon of baking soda, 1 tablespoon of vegetable oil, and 1 gallon of water. Spray this solution on the affected leaves to help inhibit fungal growth.</p3></li>
+              <li><p3>Horticultural Oils: These oils can help control fungal pathogens. Be sure to apply during cooler parts of the day to avoid leaf burn.</p3></li>
+              <li><p3>Remove Infected Leaves: Regularly inspect your plants and remove any infected leaves to minimize the spread of the fungus.</p3></li>
+              <li><p3>Improve Air Circulation: Prune your citrus trees to ensure good air flow, which can help reduce humidity around the leaves and discourage fungal growth.</p3></li>
+              <li><p3>Water Management: Avoid overhead watering and water in the morning to reduce leaf wetness, which can promote fungal diseases.</p3></li>
+              <li><p3>Mulching: Apply organic mulch around the base of the trees to help retain moisture and improve soil health.</p3></li>
+              <li><p3>Healthy Soil Practices: Ensure your trees are getting adequate nutrition by using compost or organic fertilizers to strengthen their immune systems.</p3></li>
           </ul>
           <br></br>
           <br></br>
@@ -40,4 +40,4 @@ const DiseaseGreening = () => {
   );
 };
 
-export default DiseaseGreening;
+export default DiseaseBlackSpot;

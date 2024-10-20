@@ -25,8 +25,9 @@ function Dashboard() {
         } catch (err) {
             setError('Error fetching reports');
         } finally {
-            setLoading(false);
-        }
+            const timer = setTimeout(() => {
+                setLoading(false); // Stop loading after 1 second
+            }, 500);}
     };
 
     useEffect(() => {
@@ -34,7 +35,12 @@ function Dashboard() {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return (     
+            <div className="loading-container">
+                <div className="spinner"></div>
+                <p>Loading...</p>
+            </div>
+        )
     }
 
     if (error) {

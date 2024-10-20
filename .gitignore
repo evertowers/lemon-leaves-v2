@@ -1,0 +1,7 @@
+/backend
+/frontend/node_modules
+/backend/__pycache__
+/backend/config/__pycache__
+/backend/controllers/__pycache__
+/backend/models/__pycache__
+/backend/routes/__pycache__

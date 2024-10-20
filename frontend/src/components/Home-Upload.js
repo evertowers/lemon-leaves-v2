@@ -7,6 +7,9 @@ import DiseaseGreening from './disease-greening';
 import DiseaseCanker from './disease-canker';
 import DiseaseMelanose from './disease-melanose';
 import DiseaseBlackSpot from './disease-blackspot';
+import DiseaseAphids from './disease-aphids';
+import Healthy from './healthy';
+
 
 function HomeUpload() {
     const [selectedFile, setSelectedFile] = useState();
@@ -72,7 +75,7 @@ function HomeUpload() {
 
     const renderContent = () => {
         switch (data.class) {
-            case 'Black Spot':
+            case 'Black spot':
                 return <DiseaseBlackSpot/>;
             case 'Melanose':
                 return <DiseaseMelanose/>;
@@ -80,8 +83,12 @@ function HomeUpload() {
                 return <DiseaseCanker/>;
             case 'Greening':
                 return <DiseaseGreening/>;
+            case 'Aphids':
+                return <DiseaseAphids/>;
+            case 'Healthy':
+                return <Healthy/>;
             default:
-                return <p>This leaf is healthy.</p>;
+                return <p>The system can't recognized the image.</p>;
         }
     };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/app.css';
 
-const DiseaseGreening = () => {
+const DiseaseMelanose = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
@@ -26,15 +26,15 @@ const DiseaseGreening = () => {
 
             <h1>Organic Treatments: </h1>
             <ul>
-              <li><p>Copper Fungicides: Use organic-approved copper-based fungicides. Apply according to label instructions, especially during the early growth stage and when conditions are conducive to disease.</p></li>
-              <li><p>Neem Oil: Neem oil can help control fungal infections. Mix it with water according to package directions and spray on affected leaves, ensuring good coverage.</p></li>
-              <li><p>Baking Soda Spray: Mix 1 tablespoon of baking soda, 1 tablespoon of vegetable oil, and 1 gallon of water. Spray this solution on the leaves to help reduce fungal growth.</p></li>
-              <li><p>Improve Air Circulation: Prune your trees to improve air flow around the foliage. Good air circulation can help reduce humidity and prevent fungal diseases.</p></li>
-              <li><p>Proper Watering: Water at the base of the plants to avoid wetting the leaves. Water in the morning to allow any moisture on the leaves to dry quickly.</p></li>
-              <li><p>Remove Infected Material: Regularly inspect your plants and remove any infected leaves or fruit to minimize the spread of the disease.</p></li>
-              <li><p>Healthy Soil Practices: Use organic compost and fertilizers to enhance soil health, which can help strengthen the plant's immune system.</p></li>
-              <li><p>Mulching: Apply organic mulch around the base of your trees to retain moisture, suppress weeds, and improve soil quality.</p></li>
-              <li><p>Monitor and Manage Pests: Since citrus melanose can be associated with pest issues, use organic methods like neem oil or insecticidal soap to control any insect infestations.</p></li>
+              <li><p3>Copper Fungicides: Use organic-approved copper-based fungicides. Apply according to label instructions, especially during the early growth stage and when conditions are conducive to disease.</p3></li>
+              <li><p3>Neem Oil: Neem oil can help control fungal infections. Mix it with water according to package directions and spray on affected leaves, ensuring good coverage.</p3></li>
+              <li><p3>Baking Soda Spray: Mix 1 tablespoon of baking soda, 1 tablespoon of vegetable oil, and 1 gallon of water. Spray this solution on the leaves to help reduce fungal growth.</p3></li>
+              <li><p3>Improve Air Circulation: Prune your trees to improve air flow around the foliage. Good air circulation can help reduce humidity and prevent fungal diseases.</p3></li>
+              <li><p3>Proper Watering: Water at the base of the plants to avoid wetting the leaves. Water in the morning to allow any moisture on the leaves to dry quickly.</p3></li>
+              <li><p3>Remove Infected Material: Regularly inspect your plants and remove any infected leaves or fruit to minimize the spread of the disease.</p3></li>
+              <li><p3>Healthy Soil Practices: Use organic compost and fertilizers to enhance soil health, which can help strengthen the plant's immune system.</p3></li>
+              <li><p3>Mulching: Apply organic mulch around the base of your trees to retain moisture, suppress weeds, and improve soil quality.</p3></li>
+              <li><p3>Monitor and Manage Pests: Since citrus melanose can be associated with pest issues, use organic methods like neem oil or insecticidal soap to control any insect infestations.</p3></li>
           </ul>
           <br></br>
           <br></br>
@@ -43,4 +43,4 @@ const DiseaseGreening = () => {
   );
 };
 
-export default DiseaseGreening;
+export default DiseaseMelanose;

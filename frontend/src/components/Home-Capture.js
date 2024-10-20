@@ -8,6 +8,8 @@ import DiseaseGreening from './disease-greening';
 import DiseaseCanker from './disease-canker';
 import DiseaseMelanose from './disease-melanose';
 import DiseaseBlackSpot from './disease-blackspot';
+import DiseaseAphids from './disease-aphids';
+import Healthy from './healthy';
 
 function HomeCapture() {
     const [preview, setPreview] = useState();
@@ -57,17 +59,21 @@ function HomeCapture() {
     }
 
     const renderContent = () => {
-        switch (data?.class) {
+        switch (data.class) {
             case 'Black Spot':
                 return <DiseaseBlackSpot/>;
             case 'Melanose':
-                return <DiseaseMelanose />;
+                return <DiseaseMelanose/>;
             case 'Canker':
-                return <DiseaseCanker />;
+                return <DiseaseCanker/>;
             case 'Greening':
-                return <DiseaseGreening />;
+                return <DiseaseGreening/>;
+            case 'Aphids':
+                return <DiseaseAphids/>;
+            case 'Healthy':
+                return <Healthy/>;
             default:
-                return <p>This leaf is healthy.</p>;
+                return <p>The system can't recognized the image.</p>;
         }
     };
 
