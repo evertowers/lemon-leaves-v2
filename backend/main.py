@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 
 app = FastAPI()
 
-MODEL = tf.keras.models.load_model("d:/lemon-leaves/models/1.keras")
+MODEL = tf.keras.models.load_model("C:/Users/Administrator/Documents/jay mark system/lemon-leaves-v2-1/backend/lemon-model.keras")
 CLASS_NAMES = ['Black Spot', 'Melanose', 'Canker', 'Greening', 'Healthy']
 input_shape = MODEL.input_shape  
 _, img_height, img_width, _ = input_shape
