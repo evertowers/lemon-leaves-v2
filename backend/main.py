@@ -60,9 +60,10 @@ async def predict(
     confidence = np.max(predictions[0])
 
     image_path = f"./uploads/{file.filename}"  
+    image_path_saved = f"uploads/{file.filename}"  
     with open(image_path, "wb") as f:
         f.write(await file.read())
-    report = Report(user_id=user_id, predicted_class=predicted_class, confidence=confidence, image_path=image_path)
+    report = Report(user_id=user_id, predicted_class=predicted_class, confidence=confidence, image_path=image_path_saved)
     db.add(report)
     db.commit()
     db.refresh(report)

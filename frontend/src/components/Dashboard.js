@@ -34,6 +34,12 @@ function Dashboard() {
         fetchReports();
     }, []);
 
+    const handleRowClick = (disease, imagePath) => {
+        navigate('/report-detail', {
+            state: { disease, imagePath },
+        });
+    };
+
     if (loading) {
         return (     
             <div className="loading-container">
@@ -59,20 +65,22 @@ function Dashboard() {
                 <table className="styled-table">
                         <thead>
                             <tr>
-                                <th>Image Path</th>
+                                <th>Predicted At</th>
                                 <th>Predicted Disease</th>
                                 <th>Confidence</th>
-                                <th>Predicted At</th>
+                                <th>Image Path</th>
                             </tr> 
                         </thead>
                         <tbody>
                         {reports
                             .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)) 
                             .map((report, index) => (
-                                <tr key={report.id} className={index % 2 === 0 ? "odd-row" : "even-row"}>
-                                <td>{report.image_path}</td>
-                                <td>{report.predicted_class}</td>
-                                <td>{Math.round(report.confidence * 100)}%</td>
+                                // <tr key={report.id} className={index % 2 === 0 ? "odd-row" : "even-row"}>
+                                <tr
+                                key={report.id}
+                                onClick={() => handleRowClick(report.predicted_class, report.image_path)}
+                                className={`clickable-row $index % 2 === 0 ? 'odd-row' : 'even-row'`}
+                            >
                                 <td>
                                 {
                                     (() => {
@@ -82,6 +90,10 @@ function Dashboard() {
                                     })()
                                 }
                                 </td>
+                                <td>{report.predicted_class}</td>
+                                <td>{Math.round(report.confidence * 100)}%</td>
+
+                                <td>{report.image_path}</td>
                                 </tr>
                             ))}
                         </tbody>

@@ -5,6 +5,7 @@ import Home from './components/Home';
 import HomeUpload from './components/Home-Upload';
 import HomeCapture from './components/Home-Capture';
 import Dashboard from './components/Dashboard';
+import ReportDetail from './components/ReportDetail';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/upload-pic" element={<HomeUpload />} />
         <Route path="/capture-img" element={<HomeCapture />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/report-detail" element={<ReportDetail />} />
       </Routes>
     </Router>
   );

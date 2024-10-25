@@ -525,3 +525,11 @@ p {
   font-size: 18px;
   color: #333;
 }
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  color: blue;
+}
