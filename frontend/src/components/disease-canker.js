@@ -12,6 +12,9 @@ const DiseaseCanker = () => {
               <li><p3>Dry, rough fruit skin with reduced commercial value.</p3></li>
             </ul>
 
+            <h1>RAINY SEASON</h1>
+            <p3>Canker is more damaging during the rainy season because the bacteria spreads more easily through rainwater and wind.</p3>
+
             <h1>Treatment: </h1>
             <ul>
               <li><p3>Spray fungicides, particularly copper-based, during early fruit development.</p3></li>

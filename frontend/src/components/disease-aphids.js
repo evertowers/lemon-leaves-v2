@@ -13,6 +13,12 @@ const DiseaseAphids = () => {
             <li><p3>Aphids secrete a sugary substance called honeydew, which can leave the leaves and nearby surfaces sticky. Honeydew also attracts ants and can lead to the growth of sooty mold (a black fungal coating).</p3></li>
             </ul>
 
+            <h1>DRY SEASON</h1>
+            <p3>Aphids spread quickly in hot weather due to:</p3>
+            <li><p3>Rapid population growth and reproduction</p3></li>
+            <li><p3>Increased aphid activity in high temperatures</p3></li>
+            <li><p3>Easy transfer between plants</p3></li>
+
             <h1>Treatment: </h1>
             <ul>
             <li><p3>Spray fungicides, particularly copper-based, during early fruit development.</p3></li>

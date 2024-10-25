@@ -12,6 +12,9 @@ const DiseaseGreening = () => {
             <li><p3>Small, misshapen, bitter fruits.</p3></li>
             <li><p3>Premature fruit drop and overall tree decline.</p3></li>
             </ul>
+
+            <h1>DRY SEASON</h1>
+            <p3>Citrus Greening spreads faster during summer due to insects that transmit the bacteria.</p3>
             
         
             <h1>Treatment: </h1>

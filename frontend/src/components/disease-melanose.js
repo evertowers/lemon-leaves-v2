@@ -12,6 +12,9 @@ const DiseaseMelanose = () => {
             <li><p3>Dry, rough fruit skin with reduced commercial value.</p3></li>
             </ul>
 
+            <h1>RAINY SEASON</h1>
+            <p3>Easier fungal spread through rainwater.</p3>
+
             <h1>Treatment: </h1>
             <ul>
             <li><p3>Spray fungicides, particularly copper-based, during early fruit development.</p3></li>
