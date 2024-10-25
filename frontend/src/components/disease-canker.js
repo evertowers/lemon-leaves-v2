@@ -6,14 +6,15 @@ const DiseaseCanker = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h3>(RAINY SEASON)</h3>
+            <p3>Canker is more damaging during the rainy season because the bacteria spreads more easily through rainwater and wind.</p3>
+
             <h1>Symptoms: </h1>
             <ul>
               <li><p3>Small, raised dark brown spots on leaves, twigs, and fruit.</p3></li>
               <li><p3>Dry, rough fruit skin with reduced commercial value.</p3></li>
             </ul>
 
-            <h1>RAINY SEASON</h1>
-            <p3>Canker is more damaging during the rainy season because the bacteria spreads more easily through rainwater and wind.</p3>
 
             <h1>Treatment: </h1>
             <ul>

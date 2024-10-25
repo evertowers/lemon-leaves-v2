@@ -6,16 +6,15 @@ const DiseaseGreening = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h3>(DRY SEASON)</h3>
+            <p3>Citrus Greening spreads faster during summer due to insects that transmit the bacteria.</p3>
+            
             <h1>Symptoms: </h1>
             <ul>
             <li><p3>Yellowing of leaves along the veins.</p3></li>
             <li><p3>Small, misshapen, bitter fruits.</p3></li>
             <li><p3>Premature fruit drop and overall tree decline.</p3></li>
             </ul>
-
-            <h1>DRY SEASON</h1>
-            <p3>Citrus Greening spreads faster during summer due to insects that transmit the bacteria.</p3>
-            
         
             <h1>Treatment: </h1>
             <ul>

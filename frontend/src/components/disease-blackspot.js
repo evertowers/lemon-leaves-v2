@@ -6,15 +6,15 @@ const DiseaseBlackSpot = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h3>(RAINY SEASON)</h3>
+            <p3>Black Spot is a plant disease caused by fungi Diplocarpon rosae and Phyllosticta spp. 
+              It's more damaging during the rainy season due to easier fungal spread through rainwater.</p3>
+
             <h1>Symptoms: </h1>
             <li><p3>Yellow or brownish blisters on the underside of leaves.</p3></li>
             <li><p3>Leaves may become greasy, leading to defoliation.</p3></li>
             <li><p3>Premature fruit drop and reduced fruit quality.</p3></li>
 
-            <h1>RAINY SEASON</h1>
-            <p3>Black Spot is a plant disease caused by fungi Diplocarpon rosae and Phyllosticta spp. 
-              It's more damaging during the rainy season due to easier fungal spread through rainwater.</p3>
-        
             <h1>Treatment: </h1>
             <li><p3>Use fungicides containing copper or petroleum oil to manage the infection.</p3></li>
             <li><p3>Regularly prune trees to increase airflow.</p3></li>

@@ -6,18 +6,18 @@ const DiseaseAphids = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h3>(DRY SEASON)</h3>
+            <p3>Aphids spread quickly in hot weather due to:</p3>
+            <li><p3>Rapid population growth and reproduction</p3></li>
+            <li><p3>Increased aphid activity in high temperatures</p3></li>
+            <li><p3>Easy transfer between plants</p3></li>
+
             <h1>Symptoms: </h1>
             <ul>
             <li><p3>Aphids feed on the sap of leaves, which can cause the leaves to curl, wrinkle, or become misshapen.</p3></li>
             <li><p3>Leaves may turn yellow due to the aphids' feeding, as they extract essential nutrients, weakening the plant.</p3></li>
             <li><p3>Aphids secrete a sugary substance called honeydew, which can leave the leaves and nearby surfaces sticky. Honeydew also attracts ants and can lead to the growth of sooty mold (a black fungal coating).</p3></li>
             </ul>
-
-            <h1>DRY SEASON</h1>
-            <p3>Aphids spread quickly in hot weather due to:</p3>
-            <li><p3>Rapid population growth and reproduction</p3></li>
-            <li><p3>Increased aphid activity in high temperatures</p3></li>
-            <li><p3>Easy transfer between plants</p3></li>
 
             <h1>Treatment: </h1>
             <ul>

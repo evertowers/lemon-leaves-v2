@@ -6,14 +6,14 @@ const DiseaseMelanose = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h3>(RAINY SEASON)</h3>
+            <p3>Easier fungal spread through rainwater.</p3>
+            
             <h1>Symptoms: </h1>
             <ul>
             <li><p3>Small, raised dark brown spots on leaves, twigs, and fruit.</p3></li>
             <li><p3>Dry, rough fruit skin with reduced commercial value.</p3></li>
             </ul>
-
-            <h1>RAINY SEASON</h1>
-            <p3>Easier fungal spread through rainwater.</p3>
 
             <h1>Treatment: </h1>
             <ul>
