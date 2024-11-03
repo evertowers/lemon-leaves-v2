@@ -58,9 +58,8 @@ function Dashboard() {
             <SideBar page="dashboard"/>
             <div className="content">
                 <h2>Dashboard</h2>
-                <p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis no
-                    Lorem ipsum dolor sit amet, consectetur</p1>
+                <p1>Real-time dashboard for monitoring, detecting, 
+                    and managing lemon leaf disease with actionable insights.</p1>
 
                 <table className="styled-table">
                         <thead>

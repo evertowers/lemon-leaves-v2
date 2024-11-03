@@ -117,9 +117,8 @@ function Home() {
             <SideBar page="home"/>
             <div className="content">
                 <h2>Welcome to Lemon Leaf Disease Detection System!</h2>
-                <p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis no
-                    Lorem ipsum dolor sit amet, consectetur</p1>
+                <p1>Automated system for early detection of lemon leaf disease, 
+                    enabling prompt treatment and healthier crops.</p1>
             
                 <div className="optionsContainer">
                     <div className="optionButton">
