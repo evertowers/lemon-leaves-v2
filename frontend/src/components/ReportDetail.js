@@ -47,7 +47,6 @@ function ReportDetail() {
                 <img src={imagePath} alt="Selected Preview" className="previewPhoto" />
                 <div className="predictionText">
                     <h1>Disease: </h1>
-                    <h2>{disease}</h2>
                     {renderContent()}   
                 </div>                      
             </div>
