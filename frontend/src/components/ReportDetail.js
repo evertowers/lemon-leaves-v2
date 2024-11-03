@@ -10,10 +10,10 @@ import DiseaseBlackSpot from './disease-blackspot';
 import DiseaseAphids from './disease-aphids';
 import Healthy from './healthy';
 
+
 function ReportDetail() {
     const location = useLocation();
-    const { disease, imagePath } = location.state || {}; // get disease and imagePath from state
-
+    const { disease, imagePath } = location.state || {}; 
     const renderContent = () => {
         switch (disease) {
             case 'Black spot':

@@ -9,6 +9,8 @@ from routes.auth_routes import router as auth_router
 from models.report import Report
 from config.db import get_db
 from sqlalchemy.orm import Session
+import os
+import uuid
 
 app = FastAPI()
 
@@ -60,10 +62,17 @@ async def predict(
     predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
     confidence = np.max(predictions[0])
 
-    image_path = f"./uploads/{file.filename}"  
-    image_path_saved = f"uploads/{file.filename}"  
+    original_filename = file.filename
+
+    # Extract the file extension by splitting on '.' and taking the last part
+    file_extension = '.' + original_filename.split('.')[-1] if '.' in original_filename else ''
+
+    unique_filename = f"{predicted_class}_{uuid.uuid4()}{file_extension}"  # Change .png to your desired file extension if needed
+
+    image_path = os.path.join("../frontend/public/uploads", unique_filename) 
+    image_path_saved = f"uploads/{unique_filename}"  
     with open(image_path, "wb") as f:
-        f.write(await file.read())
+        f.write(image_data)
     report = Report(user_id=user_id, predicted_class=predicted_class, confidence=confidence, image_path=image_path_saved)
     db.add(report)
     db.commit()
