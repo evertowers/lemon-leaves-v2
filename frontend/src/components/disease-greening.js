@@ -6,6 +6,7 @@ const DiseaseGreening = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h2>GREENING</h2>
             <h3>(DRY SEASON)</h3>
             <p3>Citrus Greening spreads faster during summer due to insects that transmit the bacteria.</p3>
             

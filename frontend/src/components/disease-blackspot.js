@@ -6,6 +6,7 @@ const DiseaseBlackSpot = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h2>BLACK SPOT</h2>
             <h3>(RAINY SEASON)</h3>
             <p3>Black Spot is a plant disease caused by fungi Diplocarpon rosae and Phyllosticta spp. 
               It's more damaging during the rainy season due to easier fungal spread through rainwater.</p3>

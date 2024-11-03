@@ -6,6 +6,7 @@ const DiseaseCanker = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h2>CANKER</h2>
             <h3>(RAINY SEASON)</h3>
             <p3>Canker is more damaging during the rainy season because the bacteria spreads more easily through rainwater and wind.</p3>
 

@@ -6,6 +6,7 @@ const DiseaseMelanose = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h2>MELANOSE</h2>
             <h3>(RAINY SEASON)</h3>
             <p3>Easier fungal spread through rainwater.</p3>
             

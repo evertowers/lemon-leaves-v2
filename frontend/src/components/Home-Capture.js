@@ -108,7 +108,6 @@ function HomeCapture() {
                         {data && (
                             <div className="predictionText">
                                 <h1>Disease: </h1>
-                                <h2>{data.class}</h2>
                                 {renderContent()}
                             </div>
                         )} 

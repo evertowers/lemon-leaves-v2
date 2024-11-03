@@ -6,6 +6,7 @@ const DiseaseAphids = () => {
   return (
     <div className="app">
         <div className="diseaseContent">
+            <h2>APHIDS</h2>
             <h3>(DRY SEASON)</h3>
             <p3>Aphids spread quickly in hot weather due to:</p3>
             <li><p3>Rapid population growth and reproduction</p3></li>

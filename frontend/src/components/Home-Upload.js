@@ -125,8 +125,6 @@ function HomeUpload() {
                             {data && (
                             <div className="predictionText">
                                 <h1>Disease: </h1>
-                                <h2>{data.class}</h2>
-                                {/* <h1>Confidence: {confidence}%</h1> */}
                                 {renderContent()}
                             </div>)}
                             {isLoading && <p>Loading...</p>} 
