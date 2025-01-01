@@ -30,6 +30,26 @@ function Dashboard() {
             }, 500);}
     };
 
+    const fetchPDF = async () => {
+        const token = localStorage.getItem('token');
+        try {
+            const response = await axios.get('http://localhost:8000/api/auth/reports/pdf', {
+                responseType: 'blob', // Ensure the response is treated as a blob
+            });
+
+            // Create a blob URL and trigger download
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'reports.pdf');
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        } catch (err) {
+            console.error('Error generating PDF', err);
+        }
+    };
+
     useEffect(() => {
         fetchReports();
     }, []);
@@ -60,6 +80,7 @@ function Dashboard() {
                 <h2>Dashboard</h2>
                 <p1>Real-time dashboard for monitoring, detecting, 
                     and managing lemon leaf disease with actionable insights.</p1>
+                <button onClick={fetchPDF} className="export-pdf-button">Export PDF</button>
 
                 <table className="styled-table">
                         <thead>
