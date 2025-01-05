@@ -10,3 +10,4 @@ keras==3.3.3
 Pillow
 cryptography
 pytz
+pymysql
