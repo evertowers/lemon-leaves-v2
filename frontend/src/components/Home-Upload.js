@@ -27,7 +27,7 @@ function HomeUpload() {
         formData.append("file", imageToSend);
         setIsLoading(true);
         try {
-            const res = await axios.post('http://localhost:8000/predict', formData, {
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/predict`, formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

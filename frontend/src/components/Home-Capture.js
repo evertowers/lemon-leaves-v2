@@ -31,7 +31,7 @@ function HomeCapture() {
 
         setIsLoading(true);
         try {
-            const res = await axios.post('http://localhost:8000/predict', formData);
+            const res = await axios.post(`${process.env.REACT_APP_API_URL}/predict`, formData);
             setData(res.data);
         } catch (error) {
             alert('Error during prediction');
