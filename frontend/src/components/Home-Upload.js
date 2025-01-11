@@ -29,7 +29,7 @@ function HomeUpload() {
         formData.append("file", imageToSend);
         setIsLoading(true);
         try {
-            const res = await axios.post(`${API_URL}/predict`, formData, {
+            const res = await axios.post("https://legal-tammi-student0617-c9760f79.koyeb.app/predict", formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

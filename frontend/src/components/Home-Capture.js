@@ -33,7 +33,7 @@ function HomeCapture() {
 
         setIsLoading(true);
         try {
-            const res = await axios.post(`${API_URL}/predict`, formData);
+            const res = await axios.post("https://legal-tammi-student0617-c9760f79.koyeb.app/predict", formData);
             setData(res.data);
         } catch (error) {
             alert('Error during prediction');

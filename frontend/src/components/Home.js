@@ -27,7 +27,7 @@ function Home() {
         formData.append("file", imageToSend);
         let res = await axios({
             method: "post",
-            url: process.env.REACT_APP_API_URL || `${API_URL}/predict`,
+            url: "https://legal-tammi-student0617-c9760f79.koyeb.app/predict",
             data: formData,
         });
         if (res.status === 200) {
