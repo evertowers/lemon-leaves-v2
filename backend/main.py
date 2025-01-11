@@ -87,7 +87,7 @@ async def predict(
         'created_at': report.created_at.isoformat()  
     }
 
-# app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
+app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
 
 # if __name__ == "__main__":
 #     uvicorn.run(app, host='localhost', port=8000)
