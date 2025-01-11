@@ -24,7 +24,7 @@ _, img_height, img_width, _ = input_shape
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  
+    allow_origins=["https://lemon-leaves-v2-ajgz.vercel.app"],  
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],  
@@ -89,5 +89,5 @@ async def predict(
 
 app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
 
-if __name__ == "__main__":
-    uvicorn.run(app, host='localhost', port=8000)
+# if __name__ == "__main__":
+#     uvicorn.run(app, host='localhost', port=8000)

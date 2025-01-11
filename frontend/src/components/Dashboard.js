@@ -12,11 +12,13 @@ function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const API_URL = process.env.REACT_APP_API_BASE_URL;
+
     const fetchReports = async () => {
         const token = localStorage.getItem('token');
         try {
             // const response = await axios.get('http://localhost:8000/api/auth/reports'); // Update with your API endpoint
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/reports`, {
+            const response = await axios.get(`${API_URL}/api/auth/reports`, {
                 headers: {
                     Authorization: `Bearer ${token}`, 
                 },
@@ -33,7 +35,7 @@ function Dashboard() {
     const fetchPDF = async () => {
         const token = localStorage.getItem('token');
         try {
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/reports/pdf`, {
+            const response = await axios.get(`${API_URL}/api/auth/reports/pdf`, {
                 responseType: 'blob', // Ensure the response is treated as a blob
             });
 
