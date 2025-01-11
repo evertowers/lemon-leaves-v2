@@ -19,13 +19,15 @@ function Home() {
     let confidence = 0;
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
+    const API_URL = process.env.REACT_APP_API_URL || "https://legal-tammi-student0617-c9760f79.koyeb.app";
+
 
     const sendFile = async (imageToSend) => {
         let formData = new FormData();
         formData.append("file", imageToSend);
         let res = await axios({
             method: "post",
-            url: process.env.REACT_APP_API_URL || `${process.env.REACT_APP_API_URL}/predict`,
+            url: process.env.REACT_APP_API_URL || `${API_URL}/predict`,
             data: formData,
         });
         if (res.status === 200) {

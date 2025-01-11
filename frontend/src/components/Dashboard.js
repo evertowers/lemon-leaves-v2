@@ -12,7 +12,7 @@ function Dashboard() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const API_URL = process.env.REACT_APP_API_BASE_URL;
+    const API_URL = process.env.REACT_APP_API_URL || "https://legal-tammi-student0617-c9760f79.koyeb.app";
 
     const fetchReports = async () => {
         const token = localStorage.getItem('token');

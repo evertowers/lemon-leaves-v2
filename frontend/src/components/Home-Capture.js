@@ -18,6 +18,8 @@ function HomeCapture() {
     const webcamRef = useRef(null);
     const navigate = useNavigate();
     let confidence = 0;
+    const API_URL = process.env.REACT_APP_API_URL || "https://legal-tammi-student0617-c9760f79.koyeb.app";
+
 
     const videoConstraints = {
         width: 600,  
@@ -31,7 +33,7 @@ function HomeCapture() {
 
         setIsLoading(true);
         try {
-            const res = await axios.post(`${process.env.REACT_APP_API_URL}/predict`, formData);
+            const res = await axios.post(`${API_URL}/predict`, formData);
             setData(res.data);
         } catch (error) {
             alert('Error during prediction');

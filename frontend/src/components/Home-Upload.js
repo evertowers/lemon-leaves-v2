@@ -17,6 +17,8 @@ function HomeUpload() {
     const [preview, setPreview] = useState();
     const [isLoading, setIsLoading] = useState(false);
     const token = localStorage.getItem('token');
+    const API_URL = process.env.REACT_APP_API_URL || "https://legal-tammi-student0617-c9760f79.koyeb.app";
+
 
     const [image, setImage] = useState(false);
     const navigate = useNavigate();
@@ -27,7 +29,7 @@ function HomeUpload() {
         formData.append("file", imageToSend);
         setIsLoading(true);
         try {
-            const res = await axios.post(`${process.env.REACT_APP_API_URL}/predict`, formData, {
+            const res = await axios.post(`${API_URL}/predict`, formData, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
