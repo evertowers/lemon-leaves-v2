@@ -24,7 +24,7 @@ _, img_height, img_width, _ = input_shape
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://lemon-leaves-v2-ajgz-1ela1t6el-evertowers-projects.vercel.app"],  
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],  
