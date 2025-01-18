@@ -14,6 +14,8 @@ import Healthy from './healthy';
 function ReportDetail() {
     const location = useLocation();
     const { disease, imagePath } = location.state || {}; 
+    const githubPath = "https://raw.githubusercontent.com/evertowers/leaf-disease-images/main/";
+    const imagePath2 = githubPath + imagePath;
     const renderContent = () => {
         switch (disease) {
             case 'Black spot':
@@ -44,7 +46,7 @@ function ReportDetail() {
             <div className="content">
             <h2>Report Detail</h2>
             <div className="previewContainer">
-                <img src={imagePath} alt="Selected Preview" className="previewPhoto" />
+                <img src={imagePath2} alt="Selected Preview" className="previewPhoto" />
                 <div className="predictionText">
                     <h1>Disease: </h1>
                     {renderContent()}   
