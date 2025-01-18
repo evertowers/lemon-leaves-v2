@@ -14,8 +14,8 @@ import Healthy from './healthy';
 function ReportDetail() {
     const location = useLocation();
     const { disease, imagePath } = location.state || {}; 
-    const githubPath = "https://raw.githubusercontent.com/evertowers/leaf-disease-images/main/";
-    const imagePath2 = githubPath + imagePath;
+    const githubPath = "https://raw.githubusercontent.com/evertowers/leaf-disease-images/main/Melanose_95fc912e-727d-4572-9c43-73d5f6753914.jpg";
+    const imagePath2 = githubPath;
     const renderContent = () => {
         switch (disease) {
             case 'Black spot':
