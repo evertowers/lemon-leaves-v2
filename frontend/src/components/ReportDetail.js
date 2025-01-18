@@ -17,6 +17,7 @@ function ReportDetail() {
     const githubPath = "https://raw.githubusercontent.com/evertowers/leaf-disease-images/main/Melanose_95fc912e-727d-4572-9c43-73d5f6753914.jpg";
     const imagePath2 = githubPath;
     const renderContent = () => {
+        <p>im = {imagePath}</p>
         switch (disease) {
             case 'Black spot':
                 return <DiseaseBlackSpot/>;
