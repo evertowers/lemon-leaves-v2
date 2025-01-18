@@ -11,8 +11,14 @@ from config.db import get_db
 from sqlalchemy.orm import Session
 import os
 import uuid
+from github import Github
 
 app = FastAPI()
+
+# Initialize GitHub client
+GITHUB_TOKEN = "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"  # Replace with your token
+REPO_NAME = "evertowers/leaf-disease-images"  # Replace with your repository name
+g = Github(GITHUB_TOKEN)
 
 # MODEL = tf.keras.models.load_model("C:/Users/Administrator/Documents/jay mark system/lemon-leaves-v2/backend/lemon-model.keras")
 MODEL = tf.keras.models.load_model("lemon-model.keras")
@@ -64,6 +70,9 @@ async def predict(
     predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
     confidence = np.max(predictions[0])
 
+    if confidence < 0.8:
+        predicted_class = "Unknown"
+
     original_filename = file.filename
 
     # Extract the file extension by splitting on '.' and taking the last part
@@ -71,11 +80,22 @@ async def predict(
 
     unique_filename = f"{predicted_class}_{uuid.uuid4()}{file_extension}"  # Change .png to your desired file extension if needed
 
-    image_path = os.path.join("../frontend/public/uploads", unique_filename) 
-    image_path_saved = f"uploads/{unique_filename}"  
-    with open(image_path, "wb") as f:
-        f.write(image_data)
-    report = Report(user_id=user_id, predicted_class=predicted_class, confidence=confidence, image_path=image_path_saved)
+    repo = g.get_repo(REPO_NAME)
+
+    repo.create_file(
+            unique_filename,
+            f"Upload {unique_filename}",  # Commit message
+            image_data,
+        )
+
+    # Construct the raw URL for the uploaded file
+    raw_url = f"https://raw.githubusercontent.com/{REPO_NAME}/main/{unique_filename}"
+
+    # image_path = os.path.join("../frontend/public/uploads", unique_filename) 
+    # image_path_saved = f"uploads/{unique_filename}"  
+    # with open(image_path, "wb") as f:
+    #     f.write(image_data)
+    report = Report(user_id=user_id, predicted_class=predicted_class, confidence=confidence, image_path=unique_filename)
     db.add(report)
     db.commit()
     db.refresh(report)
