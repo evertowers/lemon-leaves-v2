@@ -9,6 +9,7 @@ import DiseaseMelanose from './disease-melanose';
 import DiseaseBlackSpot from './disease-blackspot';
 import DiseaseAphids from './disease-aphids';
 import Healthy from './healthy';
+import Error from './disease-error';
 
 
 function HomeUpload() {
@@ -87,8 +88,8 @@ function HomeUpload() {
                 return <DiseaseAphids/>;
             case 'Healthy':
                 return <Healthy/>;
-            default:
-                return <p>The system can't recognized the image.</p>;
+            case 'Unknown':
+                return <Error/>;
         }
     };
 

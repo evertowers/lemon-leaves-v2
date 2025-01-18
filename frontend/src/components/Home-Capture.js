@@ -10,6 +10,7 @@ import DiseaseMelanose from './disease-melanose';
 import DiseaseBlackSpot from './disease-blackspot';
 import DiseaseAphids from './disease-aphids';
 import Healthy from './healthy';
+import Error from './disease-error';
 
 function HomeCapture() {
     const [preview, setPreview] = useState();
@@ -72,8 +73,8 @@ function HomeCapture() {
                 return <DiseaseAphids/>;
             case 'Healthy':
                 return <Healthy/>;
-            default:
-                return <p>The system can't recognized the image.</p>;
+            case 'Unknown':
+                return <Error/>;
         }
     };
 
