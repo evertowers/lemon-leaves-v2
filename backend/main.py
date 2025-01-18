@@ -89,5 +89,5 @@ async def predict(
 
 app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
 
-# if __name__ == "__main__":
-#     uvicorn.run(app, host='localhost', port=8000)
+if __name__ == "__main__":
+    uvicorn.run(app, host='localhost', port=8000)
