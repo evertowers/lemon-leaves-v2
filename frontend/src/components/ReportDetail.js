@@ -47,7 +47,7 @@ function ReportDetail() {
             <div className="content">
             <h2>Report Detail</h2>
             <div className="previewContainer">
-                <img src={imagePath2} alt="Selected Preview" className="previewPhoto" />
+                <img src={imagePath2} alt={imagePath} className="previewPhoto" />
                 <div className="predictionText">
                     <h1>Disease: </h1>
                     {renderContent()}   
