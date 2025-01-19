@@ -20,7 +20,8 @@ GITHUB_TOKEN = "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"  # Replace with your t
 REPO_NAME = "evertowers/leaf-disease-images"  # Replace with your repository name
 g = Github(GITHUB_TOKEN)
 
-MODEL = tf.keras.models.load_model("C:/Users/Administrator/Documents/jay mark system/lemon-leaves-v2/backend/lemon-model.keras")
+# MODEL = tf.keras.models.load_model("C:/Users/Administrator/Documents/jay mark system/lemon-leaves-v2/backend/lemon-model.keras")
+MODEL = tf.keras.models.load_model("D:/llv2-proj/lemon-leaves-v2/backend/lemon-model.keras")
 
 CLASS_NAMES = ['Aphids', 'Black spot', 'Canker', 'Greening', 'Healthy', 'Melanose']
 input_shape = MODEL.input_shape  
