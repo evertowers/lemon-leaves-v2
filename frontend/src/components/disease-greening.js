@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './css/app.css';
 
 const DiseaseGreening = () => {
+  const [reports, setReports] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const fetchReports = async () => {
+      const token = localStorage.getItem('token');
+      try {
+
+          const response = await axios.get('http://localhost:8000/treatments/greening');
+          setReports(response.data);
+      } catch (err) {
+          setError('Error fetching reports');
+      } finally {
+          const timer = setTimeout(() => {
+              setLoading(false); // Stop loading after 1 second
+          }, 500);}
+  };
+
+  useEffect(() => {
+      fetchReports();
+  }, []);
   return (
     <div className="app">
         <div className="diseaseContent">
@@ -18,10 +40,7 @@ const DiseaseGreening = () => {
             </ul>
         
             <h1>Treatment: </h1>
-            <ul>
-              <li><p3>No cure exists, but infected trees should be removed to prevent the spread of the disease.</p3></li>
-              <li><p3>Control the Asian citrus psyllid, which spreads the disease, using insecticides.</p3></li>
-            </ul>
+            <ul><li><p3>{reports.treatment}</p3></li></ul>
             
             <h1>Recommendations: </h1>
             <ul></ul>

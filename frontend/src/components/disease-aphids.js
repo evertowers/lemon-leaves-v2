@@ -44,10 +44,7 @@ const DiseaseAphids = () => {
             </ul>
 
             <h1>Treatment: </h1>
-
-            <ul>
-            {reports.treatment}
-            </ul>
+            <ul><li><p3>{reports.treatment}</p3></li></ul>
 
             <h1>Recommendations: </h1>
             <ul>

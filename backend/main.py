@@ -7,7 +7,7 @@ import tensorflow as tf
 from fastapi.middleware.cors import CORSMiddleware
 from routes.auth_routes import router as auth_router
 from models.report import Report
-from config.db import get_db
+from config.db import get_db, SessionLocal
 from sqlalchemy.orm import Session
 import os
 import uuid
@@ -36,6 +36,24 @@ app.add_middleware(
     allow_headers=["*"],  
 )
 
+@app.on_event("startup")
+def add_default_values():
+    db = SessionLocal()
+    try:
+        # Check if the table is empty, then insert defaults
+        if db.query(Treatment).count() == 0:
+            default_treatments = [
+                Treatment(disease_name='Aphids', treatment='Spray fungicides, particularly copper-based, during early fruit development. Prune dead wood from the tree to reduce sources of the fungus.'),
+                Treatment(disease_name='Black Spot', treatment='Use fungicides containing copper or petroleum oil to manage the infection. Regularly prune trees to increase airflow.'),
+                Treatment(disease_name='Canker', treatment='Spray fungicides, particularly copper-based, during early fruit development. Prune dead wood from the tree to reduce sources of the fungus.'),
+                Treatment(disease_name='Greening', treatment='No cure exists, but infected trees should be removed to prevent the spread of the disease. Control the Asian citrus psyllid, which spreads the disease, using insecticides.'),
+                Treatment(disease_name='Melanose', treatment='Spray fungicides, particularly copper-based, during early fruit development. Prune dead wood from the tree to reduce sources of the fungus.')
+            ]
+            db.add_all(default_treatments)
+            db.commit()
+    finally:
+        db.close()
+
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the FastAPI app!"}
@@ -51,7 +69,27 @@ def get_reports(db: Session = Depends(get_db)):
 
 @app.get("/treatments/aphids")
 def get_treatment(db: Session = Depends(get_db)):
-    treatments = db.query(Treatment).filter(Treatment.id == 1).first()
+    treatments = db.query(Treatment).filter(Treatment.disease_name == "Aphids").first()
+    return treatments
+
+@app.get("/treatments/black-spot")
+def get_treatment(db: Session = Depends(get_db)):
+    treatments = db.query(Treatment).filter(Treatment.disease_name == "Black Spot").first()
+    return treatments
+
+@app.get("/treatments/canker")
+def get_treatment(db: Session = Depends(get_db)):
+    treatments = db.query(Treatment).filter(Treatment.disease_name == "Canker").first()
+    return treatments
+
+@app.get("/treatments/greening")
+def get_treatment(db: Session = Depends(get_db)):
+    treatments = db.query(Treatment).filter(Treatment.disease_name == "Greening").first()
+    return treatments
+
+@app.get("/treatments/melanose")
+def get_treatment(db: Session = Depends(get_db)):
+    treatments = db.query(Treatment).filter(Treatment.disease_name == "Melanose").first()
     return treatments
 
 @app.get("/treatments/aphids")

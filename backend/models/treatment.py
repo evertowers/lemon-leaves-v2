@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String, Text, DateTime
-from config.db import Base
 from datetime import datetime
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 class Treatment(Base):
     __tablename__ = "treatments"
