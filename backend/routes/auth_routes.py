@@ -5,6 +5,7 @@ from controllers.auth_controller import verify_email as verify_email_controller
 from config.db import get_db
 from pydantic import BaseModel
 from models.report import Report
+from models.treatment import Treatment
 
 class UserCreate(BaseModel):
     username: str
@@ -43,6 +44,8 @@ def login_user(user: UserLogin, db: Session = Depends(get_db)):
 def get_reports(db: Session = Depends(get_db)):
     reports = db.query(Report).all()
     return reports
+
+
 
 @router.get("/verify-email")
 def verify_email(token: str, db: Session = Depends(get_db)):

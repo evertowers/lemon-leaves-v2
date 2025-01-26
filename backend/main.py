@@ -12,6 +12,7 @@ from sqlalchemy.orm import Session
 import os
 import uuid
 from github import Github
+from models.treatment import Treatment
 
 app = FastAPI()
 
@@ -47,6 +48,16 @@ async def ping():
 def get_reports(db: Session = Depends(get_db)):
     reports = db.query(Report).all()
     return reports
+
+@app.get("/treatments/aphids")
+def get_treatment(db: Session = Depends(get_db)):
+    treatments = db.query(Treatment).filter(Treatment.id == 1).first()
+    return treatments
+
+@app.get("/treatments/aphids")
+def get_treatment(db: Session = Depends(get_db)):
+    treatments = db.query(Treatment).filter(Treatment.id == 1).first()
+    return treatments
 
 def read_file_as_image(data) -> np.ndarray:
     image = Image.open(BytesIO(data))
