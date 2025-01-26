@@ -541,3 +541,9 @@ p {
 .clickable-row:hover {
   color: blue;
 }
+
+.fixed-size-img {
+  width: 200px;
+  height: 150px;
+  object-fit: contain;
+}

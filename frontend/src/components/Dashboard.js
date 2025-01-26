@@ -67,7 +67,7 @@ function Dashboard() {
                                 <th>Predicted At</th>
                                 <th>Predicted Disease</th>
                                 <th>Confidence</th>
-                                <th>Image Path</th>
+                                <th>Image</th>
                             </tr> 
                         </thead>
                         <tbody>
@@ -91,8 +91,8 @@ function Dashboard() {
                                 </td>
                                 <td>{report.predicted_class}</td>
                                 <td>{Math.round(report.confidence * 100)}%</td>
-
-                                <td>{report.image_path}</td>
+                                
+                                <td><img src={"https://raw.githubusercontent.com/evertowers/leaf-disease-images/main/" + report.image_path} class="fixed-size-img"></img></td>
                                 </tr>
                             ))}
                         </tbody>

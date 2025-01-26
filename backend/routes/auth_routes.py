@@ -45,8 +45,6 @@ def get_reports(db: Session = Depends(get_db)):
     reports = db.query(Report).all()
     return reports
 
-
-
 @router.get("/verify-email")
 def verify_email(token: str, db: Session = Depends(get_db)):
     return verify_email_controller(token, db)

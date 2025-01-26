@@ -7,6 +7,9 @@ const DiseaseBlackSpot = () => {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isEditing, setIsEditing] = useState(false); // State for edit mode
+  const [newTreatment, setNewTreatment] = useState(''); // State for new treatment
+  
 
   const fetchReports = async () => {
       const token = localStorage.getItem('token');
@@ -25,6 +28,27 @@ const DiseaseBlackSpot = () => {
   useEffect(() => {
       fetchReports();
   }, []);
+
+  const handleEditClick = () => {
+    setIsEditing(true);
+    setNewTreatment(reports.treatment); // Pre-fill the treatment for editing
+  };
+
+  const handleUpdateTreatment = async () => {
+    try {
+      const response = await axios.put(`http://localhost:8000/update/black-spot`, {
+        treatment: newTreatment,
+      });
+      // Update the treatment in the reports state after successful update
+      setReports(prevReports => ({
+        ...prevReports,
+        treatment: newTreatment,
+      }));
+      setIsEditing(false); // Exit edit mode
+    } catch (err) {
+      setError('Error updating treatment');
+    }
+  };
   return (
     <div className="app">
         <div className="diseaseContent">
@@ -39,8 +63,23 @@ const DiseaseBlackSpot = () => {
             <li><p3>Premature fruit drop and reduced fruit quality.</p3></li>
             </ul>
 
-            <h1>Treatment: </h1><ul>
-            <li><p3>{reports.treatment}</p3></li></ul>
+            <h1>Treatment: </h1>
+            {isEditing ? (
+              <div>
+                <textarea
+                  value={newTreatment}
+                  onChange={(e) => setNewTreatment(e.target.value)}
+                />
+                <button onClick={handleUpdateTreatment}>Save Treatment</button>
+              </div>
+            ) : (
+              <ul><li><p3>{reports.treatment}</p3></li></ul>
+            )}
+            
+            {!isEditing && (
+              <button onClick={handleEditClick} className="chooseFile">Edit Treatment</button>
+            )}
+
             
             <h1>Recommendations: </h1><ul>
             <li><p3>Remove and destroy fallen leaves to prevent reinfection.</p3></li>

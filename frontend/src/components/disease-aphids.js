@@ -1,50 +1,85 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import './css/app.css';
 
 const DiseaseAphids = () => {
-  
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isEditing, setIsEditing] = useState(false); // State for edit mode
+  const [newTreatment, setNewTreatment] = useState(''); // State for new treatment
 
   const fetchReports = async () => {
-      const token = localStorage.getItem('token');
-      try {
-
-          const response = await axios.get('http://localhost:8000/treatments/aphids');
-          setReports(response.data);
-      } catch (err) {
-          setError('Error fetching reports');
-      } finally {
-          const timer = setTimeout(() => {
-              setLoading(false); // Stop loading after 1 second
-          }, 500);}
+    const token = localStorage.getItem('token');
+    try {
+      const response = await axios.get('http://localhost:8000/treatments/aphids');
+      setReports(response.data);
+    } catch (err) {
+      setError('Error fetching reports');
+    } finally {
+      const timer = setTimeout(() => {
+        setLoading(false); // Stop loading after 1 second
+      }, 500);
+    }
   };
 
   useEffect(() => {
-      fetchReports();
+    fetchReports();
   }, []);
+
+  const handleEditClick = () => {
+    setIsEditing(true);
+    setNewTreatment(reports.treatment); // Pre-fill the treatment for editing
+  };
+
+  const handleUpdateTreatment = async () => {
+    try {
+      const response = await axios.put(`http://localhost:8000/update/aphids`, {
+        treatment: newTreatment,
+      });
+      // Update the treatment in the reports state after successful update
+      setReports(prevReports => ({
+        ...prevReports,
+        treatment: newTreatment,
+      }));
+      setIsEditing(false); // Exit edit mode
+    } catch (err) {
+      setError('Error updating treatment');
+    }
+  };
+
   return (
     <div className="app">
-        <div className="diseaseContent">
-            <h2>APHIDS</h2>
-            <h3>(DRY SEASON)</h3>
-            <p3>Aphids spread quickly in hot weather due to:</p3>
-            <li><p3>Rapid population growth and reproduction</p3></li>
-            <li><p3>Increased aphid activity in high temperatures</p3></li>
-            <li><p3>Easy transfer between plants</p3></li>
+      <div className="diseaseContent">
+        <h2>APHIDS</h2>
+        <h3>(DRY SEASON)</h3>
+        <p3>Aphids spread quickly in hot weather due to:</p3>
+        <li><p3>Rapid population growth and reproduction</p3></li>
+        <li><p3>Increased aphid activity in high temperatures</p3></li>
+        <li><p3>Easy transfer between plants</p3></li>
 
-            <h1>Symptoms: </h1>
-            <ul>
-            <li><p3>Aphids feed on the sap of leaves, which can cause the leaves to curl, wrinkle, or become misshapen.</p3></li>
-            <li><p3>Leaves may turn yellow due to the aphids' feeding, as they extract essential nutrients, weakening the plant.</p3></li>
-            <li><p3>Aphids secrete a sugary substance called honeydew, which can leave the leaves and nearby surfaces sticky. Honeydew also attracts ants and can lead to the growth of sooty mold (a black fungal coating).</p3></li>
-            </ul>
+        <h1>Symptoms: </h1>
+        <ul>
+          <li><p3>Aphids feed on the sap of leaves, which can cause the leaves to curl, wrinkle, or become misshapen.</p3></li>
+          <li><p3>Leaves may turn yellow due to the aphids' feeding, as they extract essential nutrients, weakening the plant.</p3></li>
+          <li><p3>Aphids secrete a sugary substance called honeydew, which can leave the leaves and nearby surfaces sticky. Honeydew also attracts ants and can lead to the growth of sooty mold (a black fungal coating).</p3></li>
+        </ul>
 
-            <h1>Treatment: </h1>
-            <ul><li><p3>{reports.treatment}</p3></li></ul>
+        <h1>Treatment: </h1>
+        {isEditing ? (
+          <div>
+            <textarea
+              value={newTreatment}
+              onChange={(e) => setNewTreatment(e.target.value)}
+            />
+            <button onClick={handleUpdateTreatment}>Save Treatment</button>
+          </div>
+        ) : (
+          <ul><li><p3>{reports.treatment}</p3></li></ul>
+        )}
+        {!isEditing && (
+          <button onClick={handleEditClick} className="chooseFile">Edit Treatment</button>
+        )}
 
             <h1>Recommendations: </h1>
             <ul>
