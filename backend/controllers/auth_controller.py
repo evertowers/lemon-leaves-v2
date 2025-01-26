@@ -7,6 +7,7 @@ import bcrypt
 from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
+from fastapi.responses import RedirectResponse
 
 
 SECRET_KEY = "secretKey" 
@@ -117,7 +118,8 @@ def verify_email(token: str, db: Session):
         user.is_verified = True
         db.commit()
         db.refresh(user)
-        return {"message": "Email verified successfully"}
+        # return {"message": "Email verified successfully"}
+        return RedirectResponse(url="http://localhost:3000/login?verified=true")
     except JWTError:
         raise HTTPException(status_code=400, detail="Invalid token")
 

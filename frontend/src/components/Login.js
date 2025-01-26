@@ -8,6 +8,17 @@ function Login() {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Read query parameters
+    const query = new URLSearchParams(location.search);
+    const isVerified = query.get("verified");
+
+    if (isVerified === "true") {
+      // Show an alert when redirected after verification
+      alert("Your email has been successfully verified! You can now log in.");
+    }
+  }, [location]);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
