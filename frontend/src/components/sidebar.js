@@ -47,11 +47,11 @@ function SideBar({page}) {
             <div className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`}>
                 {/* Hamburger Icon */}
                 <button className="hamburgerButton" onClick={toggleSidebar}><FaBars/></button>
-                {isOpen && <div>
+                {isOpen && <div className="nav-texts">
 		            <div className="usernameGreeting"><h1>Hi, {username}!</h1></div>
-                    <div onClick={handleHome} style={{ padding: isOpen ? "10px 20px" : "10px 0" }}><FaHome /><span style={{ marginLeft: "10px" }}>Home</span></div>
-                    <div onClick={handleDashboard} style={{ padding: isOpen ? "10px 20px" : "10px 0" }}><FaTable /><span style={{ marginLeft: "10px" }}>Dashboard</span></div>
-                    <div onClick={handleLogout} style={{ padding: isOpen ? "10px 20px" : "10px 0" }}><FaSignOutAlt /><span style={{ marginLeft: "10px" }}>Logout</span></div>
+                    <div className="nav-items"><div  onClick={handleHome} style={{ padding: isOpen ? "10px 20px" : "10px 0" }}><FaHome className="nav-icons"/><span style={{ marginLeft: "10px" }}>Home</span></div></div>
+                    <div className="nav-items"><div className="usernameGreeting" onClick={handleDashboard} style={{ padding: isOpen ? "10px 20px" : "10px 0" }}><FaTable className="nav-icons"/><span style={{ marginLeft: "10px" }}>Dashboard</span></div></div>
+                    <div className="nav-items"><div className="usernameGreeting" onClick={handleLogout} style={{ padding: isOpen ? "10px 20px" : "10px 0" }}><FaSignOutAlt className="nav-icons"/><span style={{ marginLeft: "10px" }}>Logout</span></div></div>
                 </div>}
             </div>
             </div>

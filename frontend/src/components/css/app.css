@@ -61,12 +61,33 @@
   }
 
   .usernameGreeting h1 {
+    font-size: 30px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    margin: 15px;
+  }
+  h4 {
+    font-size: 22px;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 300;
+    color: black;
+  }
+
+  .nav-items {
+    width: 100%;
+    align-items: center; /* Vertically centers the content */
     font-size: 25px;
     font-family: 'Lexend', sans-serif;
     font-weight: 300;
-    margin: 0 0 0 15px;
+    padding: 10px;
+    color: black;
   }
-  
+
+  .nav-texts {
+    width: 100%;
+  }
+
+
   /*.oldsidebar {
     width: 300px;
     position: fixed;
@@ -136,8 +157,9 @@
   }
 
   .nav-icons {
-    max-width: 13%;
+    max-width: 100%;
     align-items: center;
+    font-size: 35px;
   }
 
   .lowerSideBar {
