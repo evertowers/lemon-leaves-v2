@@ -316,14 +316,12 @@ input[type="email"], input[type="password"] {
     align-items: flex-start;
     
 }
-
-.previewContainer img {
-    width: 300px;
-    height: auto;
-    object-fit: contain;
-    margin: 30px;
-    border: 10px solid black;
-    border-radius: 5px;
+.photoZoomDiv {
+  width: 1000px;
+  height: auto;
+  object-fit: contain;
+  margin: 30px;
+  align-items: "center"
 }
 
 .predictionText {

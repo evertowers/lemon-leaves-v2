@@ -9,6 +9,7 @@ import DiseaseMelanose from './disease-melanose';
 import DiseaseBlackSpot from './disease-blackspot';
 import DiseaseAphids from './disease-aphids';
 import Healthy from './healthy';
+import PhotoZoom from './PhotoZoom';
 
 
 function ReportDetail() {
@@ -45,7 +46,7 @@ function ReportDetail() {
             <div className="content">
             <h2>Report Detail</h2>
             <div className="previewContainer">
-                <img src={imagePath2} alt="Selected Preview" className="previewPhoto" />
+                <div className="photoZoomDiv"><PhotoZoom src={imagePath2} alt="Selected Preview"/></div>
                 <div className="predictionText">
                     <h1>Disease: </h1>
                     {renderContent()}   

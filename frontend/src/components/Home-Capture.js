@@ -11,6 +11,7 @@ import DiseaseBlackSpot from './disease-blackspot';
 import DiseaseAphids from './disease-aphids';
 import Healthy from './healthy';
 import Error from './disease-error';
+import PhotoZoom from './PhotoZoom';
 
 function HomeCapture() {
     const [preview, setPreview] = useState();
@@ -105,7 +106,7 @@ function HomeCapture() {
                             screenshotFormat="image/jpeg"
                             videoConstraints={videoConstraints} 
                         />}
-                        {preview && <img src={preview} alt="Captured Preview" className="previewPhoto" />}
+                        {preview && <PhotoZoom src={preview} alt="Captured Preview" className="previewPhoto" />}
                         {data && (
                             <div className="predictionText">
                                 <h1>Disease: </h1>

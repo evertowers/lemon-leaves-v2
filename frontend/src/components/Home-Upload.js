@@ -10,6 +10,7 @@ import DiseaseBlackSpot from './disease-blackspot';
 import DiseaseAphids from './disease-aphids';
 import Healthy from './healthy';
 import Error from './disease-error';
+import PhotoZoom from './PhotoZoom';
 
 
 function HomeUpload() {
@@ -122,7 +123,7 @@ function HomeUpload() {
                             <button onClick={handleHome} className="chooseFile">Go back to Home</button>
                         </div>
                         <div className="previewContainer">
-                            {preview && <img src={preview} alt="Selected Preview" className="previewPhoto" />}
+                            {preview && <PhotoZoom src={preview} alt="Selected Preview" className="previewPhoto" />}
                             {data && (
                             <div className="predictionText">
                                 <h1>Disease: </h1>
