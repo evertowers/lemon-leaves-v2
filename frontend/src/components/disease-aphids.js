@@ -67,12 +67,12 @@ const DiseaseAphids = () => {
 
         <h1>Treatment: </h1>
         {isEditing ? (
-          <div>
+          <div className="editingDiv">
             <textarea
               value={newTreatment}
               onChange={(e) => setNewTreatment(e.target.value)}
             />
-            <button onClick={handleUpdateTreatment}>Save Treatment</button>
+            <button onClick={handleUpdateTreatment} className="chooseFile">Save Treatment</button>
           </div>
         ) : (
           <ul><li><p3>{reports.treatment}</p3></li></ul>

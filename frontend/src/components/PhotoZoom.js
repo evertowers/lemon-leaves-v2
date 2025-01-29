@@ -37,7 +37,7 @@ const PhotoZoom = ({ src, alt }) => {
   };
 
   return (
-    <div 
+    <div
       style={{
         overflow: "hidden", // Prevent image from overflowing container
         position: "relative",
@@ -52,6 +52,7 @@ const PhotoZoom = ({ src, alt }) => {
       <img
         src={src}
         alt={alt}
+
         style={{
           objectFit: "contain", // Keep image aspect ratio
           border: "10px solid black",
@@ -61,6 +62,7 @@ const PhotoZoom = ({ src, alt }) => {
             : "none",
           transition: zoomLevel === 1 ? "transform 0.3s ease" : "none",
           cursor: zoomLevel > 1 ? "grab" : "pointer",
+          width: "700px",
           maxWidth: "90%", // Make sure image doesn't exceed the container width
           maxHeight: "100%", // Make sure image doesn't exceed the container height
         }}
