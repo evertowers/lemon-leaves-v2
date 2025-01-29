@@ -38,8 +38,7 @@ function ReportDetail() {
     const handleHome = () => {
         navigate('/home');
     }
-
-
+    
     return (
         <div className="app">
             <SideBar page="dashboard"/>

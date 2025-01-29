@@ -18,7 +18,7 @@ function Register() {
     try {
       const response = await register(formData);
       alert('User registered successfully!');
-      navigate('/login');
+      navigate('/register-success');
     } catch (error) {
       alert('Username/Email already used');
     }

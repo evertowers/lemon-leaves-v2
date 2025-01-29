@@ -62,7 +62,6 @@ const PhotoZoom = ({ src, alt }) => {
             : "none",
           transition: zoomLevel === 1 ? "transform 0.3s ease" : "none",
           cursor: zoomLevel > 1 ? "grab" : "pointer",
-          width: "700px",
           maxWidth: "90%", // Make sure image doesn't exceed the container width
           maxHeight: "100%", // Make sure image doesn't exceed the container height
         }}

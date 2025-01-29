@@ -123,7 +123,7 @@ function HomeUpload() {
                             <button onClick={handleHome} className="chooseFile">Go back to Home</button>
                         </div>
                         <div className="previewContainer">
-                            {preview && <PhotoZoom src={preview} alt="Selected Preview" className="previewPhoto" />}
+                            {preview && <div className="photoZoomDiv"><PhotoZoom src={preview} alt="Selected Preview" /></div>}
                             {data && (
                             <div className="predictionText">
                                 <h1>Disease: </h1>
